@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script language="JavaScript" type="application/javascript" src="{{ url_for('static', filename = 'scripts/ui.js') }}" defer></script>
+    <link rel="stylesheet" href="static/main.css">
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>swapi</title>
 </head>
 <body>
-$END$
+<button id="test">test</button>
+{% include "modal.html" %}
+{% include "content.html" %}
 </body>
 </html>
+

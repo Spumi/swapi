@@ -1,0 +1,25 @@
+<h2>Residents of {{ planet }}</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Height</th>
+        <th>Mass</th>
+        <th>Hair Color</th>
+        <th>Skin color</th>
+        <th>Eye color</th>
+        <th>Birth year</th>
+        <th>Gender</th>
+    </tr>
+    {% for resident in residents %}
+        <tr>
+            <td>{{ resident["name"] }}</td>
+            <td>{{ resident["height"] }}</td>
+            <td>{{ resident["mass"] }}</td>
+            <td>{{ resident["hair_color"] }}</td>
+            <td>{{ resident["skin_color"] }}</td>
+            <td>{{ resident["eye_color"] }}</td>
+            <td>{{ resident["birth_year"] }}</td>
+            <td>{{ resident["gender"] }}</td>
+        </tr>
+    {% endfor %}
+</table>

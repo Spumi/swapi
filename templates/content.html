@@ -1,0 +1,35 @@
+<div>
+    <table id="resultsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Diameter</th>
+                <th>Climate</th>
+                <th>Terrain</th>
+                <th>Surface Water Percentage</th>
+                <th>Population</th>
+                <th>Residents</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for planet in results %}
+                <tr>
+                    <td>{{ planet["name"] }}</td>
+                    <td>{{ planet["diameter"] }}</td>
+                    <td>{{ planet["climate"] }}</td>
+                    <td>{{ planet["terrain"] }}</td>
+                    <td>{{ planet["surface_water"] }}</td>
+                    <td>{{ planet["population"] }}</td>
+                    <td>{% if planet["residents"] | length < 1 %}
+                        {{ "No known residents" }}  }
+                        {% else %}
+                        {{ ("<button onclick='sendForm(" +((page * 10) - 10 +loop.index + 1)| string +")\'>Residents</button>") | safe }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/?page={{ page - 1 }}">Previous</a>
+    <a href="/?page={{ page + 1 }}">Next</a>
+</div>
