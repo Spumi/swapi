@@ -20,7 +20,7 @@ def api(page):
 @app.route('/')
 @app.route('/')
 def root():
-    if request.args.get('[page]'):
+    if request.args.get('page'):
         page = int(request.args.get('page'))
     else:
         page = 1
