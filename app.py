@@ -26,7 +26,7 @@ def root():
         page = 1
 
     results = getPlanets(page)
-    print(execute_query("SELECT * from users"))
+    #print(execute_query("SELECT * from users"))
     return render_template("index.html", results=results, page = page)
 
 
@@ -66,7 +66,7 @@ def getPlanets(page):
     return plantes
 
 
-@connection.connection_handler
+# @connection.connection_handler
 def execute_query(cursor, query):
     if query.startswith("SELECT"):
         cursor.execute(
